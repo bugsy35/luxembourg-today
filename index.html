@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Chroniques de l'Urbex | Luxembourg</title>
+<meta name="description" content="Un regard éditorial sur l'exploration urbaine, les lieux oubliés et la communauté LUX URBEX CREW.">
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --red:#bd102b;
+  --black:#111;
+  --paper:#f1eee6;
+  --ink:#202020;
+  --line:#c7c0b4;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:#d4d0c7;color:var(--ink);font-family:"DM Sans",sans-serif}
+a{color:inherit}
+img{width:100%;height:100%;object-fit:cover;display:block}
+.page{max-width:1400px;margin:auto;background:var(--paper);min-height:100vh}
+header{background:var(--black);color:white;padding:18px 3.5% 22px}
+.topline{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #777;padding-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:1.4px}
+.brand{display:flex;align-items:center;justify-content:center;gap:18px;padding:25px 0 15px}
+.brand-mark{color:var(--red);font-size:42px}
+h1{font-family:"Barlow Condensed",sans-serif;font-size:clamp(45px,8vw,100px);line-height:.85;text-transform:uppercase;margin:0;text-align:center;letter-spacing:-2px}
+h1 span{color:var(--red);font-style:italic}
+.tagline{text-align:center;text-transform:uppercase;font-size:10px;letter-spacing:3px}
+nav{position:sticky;top:0;z-index:20;background:#111;color:white;display:flex;gap:3px;padding:7px 3%;overflow-x:auto;border-bottom:3px solid var(--red)}
+nav a{padding:12px;text-decoration:none;text-transform:uppercase;white-space:nowrap;font-size:10px;font-weight:700}
+nav a:hover{background:var(--red)}
+main{padding:22px 3.5% 35px}
+.kicker{font-family:"Barlow Condensed",sans-serif;color:var(--red);font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(240px,.8fr);gap:15px}
+.hero{min-height:470px;position:relative;background:#111;color:white;overflow:hidden}
+.hero>img{position:absolute;inset:0;transition:transform .6s}
+.hero:hover>img{transform:scale(1.035)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000e,#0007 60%,transparent),linear-gradient(0deg,#0008,transparent 65%)}
+.hero-content{position:absolute;z-index:1;left:25px;right:25px;bottom:25px;max-width:680px}
+.hero h2{font-family:"Playfair Display",serif;font-size:clamp(32px,4.5vw,57px);line-height:1.06;margin:12px 0}
+.hero p{font-family:"Playfair Display",serif;font-size:16px;line-height:1.6;color:#eee}
+.meta{border-top:1px solid #ffffff66;padding-top:12px;font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.stack{display:flex;flex-direction:column;gap:15px}
+.dark-card{background:#111;color:white;padding:23px;flex:1}
+.dark-card h3{font-family:"Barlow Condensed",sans-serif;font-size:26px;text-transform:uppercase;margin:8px 0}
+.dark-card p{font-size:13px;line-height:1.7;color:#ddd}
+.btn{display:inline-block;background:var(--red);color:white;padding:13px 16px;text-decoration:none;text-transform:uppercase;font-size:10px;font-weight:700;letter-spacing:.5px;border:1px solid var(--red)}
+.btn:hover{background:white;color:#111}
+.btn.outline{background:transparent;border-color:#888}
+.section-head{display:flex;align-items:baseline;gap:12px;border-bottom:3px solid #222;margin:32px 0 18px;padding-bottom:8px}
+.section-head h2{font-family:"Barlow Condensed",sans-serif;font-size:31px;text-transform:uppercase;margin:0}
+.section-head span{margin-left:auto;color:#777;font-size:10px;text-transform:uppercase}
+.columns{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:25px}
+.story{font-family:"Playfair Display",serif;font-size:15px;line-height:1.8}
+.story p{margin:0 0 15px}
+.dropcap:first-letter{float:left;font-size:64px;line-height:.8;padding:8px 8px 0 0;color:var(--red)}
+.article{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+.article h3{font-family:"Barlow Condensed",sans-serif;color:var(--red);font-size:25px;text-transform:uppercase;margin:0 0 10px}
+.article p{font-size:13px;line-height:1.8;margin:0 0 12px}
+.photo{position:relative;overflow:hidden;background:#222;cursor:zoom-in;min-height:210px}
+.photo img{transition:transform .5s}
+.photo:hover img{transform:scale(1.05)}
+.photo-label{position:absolute;bottom:0;left:0;right:0;padding:18px 12px 10px;background:linear-gradient(transparent,#000d);color:white;font-size:11px}
+.caption{font-size:10px;color:#777;font-style:italic;margin-top:6px}
+.large-photo{height:300px;margin:20px 0}
+.quote{padding:24px;border-left:5px solid var(--red);background:#e5dfd3;font-family:"Playfair Display",serif;font-size:23px;font-style:italic;line-height:1.45;margin:22px 0}
+.quote small{display:block;font-family:"DM Sans",sans-serif;font-size:10px;font-style:normal;text-transform:uppercase;margin-top:12px}
+.sidebox{border:1px solid var(--line);padding:18px;margin-bottom:18px}
+.sidebox h3{font-family:"Barlow Condensed",sans-serif;font-size:24px;text-transform:uppercase;margin:0 0 12px}
+.sidebox p{font-size:12px;line-height:1.7}
+.timeline{border-left:2px solid var(--red);padding-left:18px;margin-left:7px}
+.timeitem{position:relative;padding-bottom:23px}
+.timeitem:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--red);left:-24px;top:6px}
+.timeitem strong{font-family:"Barlow Condensed",sans-serif;font-size:25px}
+.timeitem h4{font-size:13px;margin:3px 0}
+.timeitem p{margin:0;color:#555}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gallery .photo{height:230px}
+.gallery .photo:first-child{grid-column:span 2;height:300px}
+.gallery .photo:nth-child(5){grid-column:span 2}
+.note{font-size:10px;color:#777;line-height:1.6}
+.banner{margin-top:30px;padding:30px;background:#111;color:white;display:grid;grid-template-columns:1.4fr 1fr;gap:20px;align-items:center}
+.banner h2{font-family:"Barlow Condensed",sans-serif;font-size:40px;text-transform:uppercase;margin:8px 0}
+.banner p{font-size:13px;line-height:1.7;color:#ddd}
+footer{padding:25px 3.5%;background:#111;color:white;display:flex;justify-content:space-between;align-items:center;gap:20px}
+footer strong{font-family:"Barlow Condensed",sans-serif;font-size:23px}
+footer p{font-size:10px;color:#aaa}
+.footerlinks{display:flex;gap:15px;flex-wrap:wrap}
+.footerlinks a{font-size:11px;text-decoration:none}
+.footerlinks a:hover{color:#ff536d}
+.lightbox{position:fixed;inset:0;z-index:100;background:#000f;display:none;align-items:center;justify-content:center;padding:25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95vw;max-height:85vh;object-fit:contain}
+.close{position:absolute;right:20px;top:10px;border:0;background:none;color:white;font-size:40px;cursor:pointer}
+@media(max-width:850px){
+ .hero-grid,.columns{grid-template-columns:1fr}
+ .stack{display:grid;grid-template-columns:1fr 1fr}
+ .banner{grid-template-columns:1fr}
+}
+@media(max-width:540px){
+ header{padding:12px 4% 18px}
+ .topline{font-size:8px;letter-spacing:.4px}
+ .brand{gap:6px;padding:22px 0 13px}
+ .brand-mark{font-size:24px}
+ h1{font-size:42px;letter-spacing:-1px}
+ .tagline{font-size:8px;letter-spacing:1px}
+ main{padding:14px 4% 25px}
+ .hero{min-height:470px}
+ .hero-content{left:16px;right:16px;bottom:17px}
+ .hero h2{font-size:34px}
+ .stack{grid-template-columns:1fr}
+ .article{grid-template-columns:1fr}
+ .section-head h2{font-size:26px}
+ .section-head span{font-size:8px}
+ .gallery{grid-template-columns:1fr 1fr}
+ .gallery .photo,.gallery .photo:first-child,.gallery .photo:nth-child(5){grid-column:auto;height:180px}
+ .gallery .photo:first-child{grid-column:span 2;height:220px}
+ footer{align-items:flex-start;flex-direction:column}
+ .banner{padding:20px}
+ .banner h2{font-size:32px}
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<header>
+  <div class="topline">
+    <span>Luxembourg · Journal numérique</span>
+    <span>Reportages · Exploration · Patrimoine</span>
+    <span>Édition spéciale</span>
+  </div>
+  <div class="brand">
+    <div class="brand-mark">♛</div>
+    <h1>LES <span>CHRONIQUES</span><br>DE L'URBEX</h1>
+    <div class="brand-mark">♛</div>
+  </div>
+  <div class="tagline">Un regard indépendant sur les lieux oubliés du Luxembourg</div>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#reportage">Reportage</a>
+  <a href="#exploration">Urbex</a>
+  <a href="#mysteres">Paranormal</a>
+  <a href="#chronologie">Chronologie</a>
+  <a href="#galerie">Galerie</a>
+  <a href="https://www.tiktok.com/@lux_urbex3435" target="_blank" rel="noopener">TikTok ↗</a>
+</nav>
+
+<main id="accueil">
+  <div class="hero-grid">
+    <article class="hero">
+      <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1500&q=85" alt="Architecture urbaine imposante">
+      <div class="hero-content">
+        <div class="kicker">À la une · Reportage spécial</div>
+        <h2>LUX URBEX CREW : UNE HISTOIRE QUI SE CONSTRUIT DANS L'OMBRE</h2>
+        <p>Depuis environ trois ans, un collectif luxembourgeois poursuit son aventure entre exploration urbaine, lieux oubliés et fascination pour le mystère.</p>
+        <div class="meta">Dossier spécial &nbsp; · &nbsp; Lecture : 5 minutes</div>
+      </div>
+    </article>
+
+    <aside class="stack">
+      <div class="dark-card">
+        <div class="kicker">Le collectif en ligne</div>
+        <h3>Des explorations à découvrir</h3>
+        <p>Les publications de LUX URBEX CREW permettent de suivre ses activités et son univers.</p>
+        <a class="btn" href="https://www.tiktok.com/@lux_urbex3435" target="_blank" rel="noopener">Consulter TikTok ↗</a>
+      </div>
+      <div class="dark-card">
+        <div class="kicker">Informations</div>
+        <h3>Une communauté en évolution</h3>
+        <p>Le site du collectif présente ses informations et les modalités pour les personnes intéressées.</p>
+        <a class="btn outline" href="https://lux-crew-recruiter.lovable.app" target="_blank" rel="noopener">Voir le site ↗</a>
+      </div>
+    </aside>
+  </div>
+
+  <div class="columns">
+    <div>
+      <section id="reportage">
+        <div class="section-head">
+          <h2>Dans les coulisses de LUX URBEX CREW</h2>
+          <span>Le grand reportage</span>
+        </div>
+        <div class="story">
+          <p class="dropcap">Au Luxembourg, certains lieux semblent avoir été oubliés par le temps. Anciennes installations industrielles, bâtiments désertés et espaces chargés d'histoire attirent les passionnés d'exploration urbaine. Dans cet univers, LUX URBEX CREW développe progressivement son identité.</p>
+          <p>Selon les informations disponibles sur le collectif, l'aventure a commencé il y a environ trois ans. Depuis ses débuts, le groupe a construit une communauté autour de la découverte de lieux oubliés, du partage d'expériences et d'un intérêt pour les atmosphères mystérieuses.</p>
+          <p>Le collectif cherche aujourd'hui à élargir sa communauté et à renforcer sa présence en ligne. Ses réseaux sociaux et son site permettent aux personnes intéressées de découvrir son univers.</p>
+        </div>
+        <div class="photo large-photo" data-lightbox>
+          <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=85" alt="Bâtiment et architecture urbaine" loading="lazy">
+          <div class="photo-label">Les lieux oubliés continuent de nourrir la curiosité des explorateurs.</div>
+        </div>
+      </section>
+
+      <section id="exploration">
+        <div class="section-head">
+          <h2>Au-delà des bâtiments abandonnés</h2>
+          <span>Culture urbaine</span>
+        </div>
+        <div class="article">
+          <div class="photo" data-lightbox>
+            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85" alt="Paysage crépusculaire" loading="lazy">
+            <div class="photo-label">L'ambiance fait partie du récit.</div>
+          </div>
+          <div>
+            <h3>Explorer, observer, comprendre</h3>
+            <p>L'urbex ne se limite pas à visiter un endroit oublié. L'architecture, l'histoire locale et les traces laissées par le temps contribuent à l'intérêt de ces lieux.</p>
+            <p>Les images permettent de documenter ce qui existe encore et de partager une découverte avec d'autres passionnés. Le respect des propriétés, des interdictions d'accès et des règles de sécurité reste essentiel.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mysteres">
+        <div class="section-head">
+          <h2>Entre mystère et paranormal</h2>
+          <span>Le dossier de l'inexpliqué</span>
+        </div>
+        <div class="article">
+          <div>
+            <h3>Quand les lieux suscitent des questions</h3>
+            <p>Silence inhabituel, histoires locales et atmosphères singulières peuvent nourrir l'imagination. Certains passionnés s'intéressent aussi aux récits paranormaux associés aux endroits qu'ils découvrent.</p>
+            <p>Un récit sérieux distingue les témoignages, les impressions personnelles et les faits vérifiables. Le mystère peut rester entier sans présenter une hypothèse comme une certitude.</p>
+          </div>
+          <div class="photo" data-lightbox>
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85" alt="Forêt mystérieuse" loading="lazy">
+            <div class="photo-label">L'inexpliqué commence souvent par une question.</div>
+          </div>
+        </div>
+        <div class="quote">
+          « Certains lieux semblent silencieux. Pourtant, leur passé continue de susciter des questions. »
+          <small>Chroniques de l'urbex</small>
+        </div>
+      </section>
+
+      <section id="avenir">
+        <div class="section-head">
+          <h2>Une communauté tournée vers l'avenir</h2>
+          <span>Perspectives</span>
+        </div>
+        <div class="story">
+          <p>La vie d'un collectif se construit au fil des rencontres, des projets et des expériences partagées. LUX URBEX CREW cherche à développer sa visibilité et à accueillir de nouvelles personnes intéressées par l'exploration urbaine.</p>
+          <p>Son ambition est de devenir progressivement une communauté reconnue dans l'univers de l'urbex au Luxembourg. Cette reconnaissance se construit avec le temps, grâce aux activités du groupe et à la manière dont il partage ses découvertes.</p>
+          <p>L'histoire reste ouverte. Les prochains chapitres dépendront des projets à venir et des expériences que la communauté choisira de partager.</p>
+        </div>
+      </section>
+
+      <section id="galerie">
+        <div class="section-head">
+          <h2>Images d'un monde oublié</h2>
+          <span>Cliquez pour agrandir</span>
+        </div>
+        <div class="gallery">
+          <div class="photo" data-lightbox>
+            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=85" alt="Architecture urbaine" loading="lazy">
+            <div class="photo-label">Architecture</div>
+          </div>
+          <div class="photo" data-lightbox>
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=85" alt="Forêt et atmosphère mystérieuse" loading="lazy">
+            <div class="photo-label">Mystères</div>
+          </div>
+          <div class="photo" data-lightbox>
+            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=85" alt="Paysage au crépuscule" loading="lazy">
+            <div class="photo-label">Crépuscule</div>
+          </div>
+          <div class="photo" data-lightbox>
+            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85" alt="Détails architecturaux" loading="lazy">
+            <div class="photo-label">Traces du passé</div>
+          </div>
+          <div class="photo" data-lightbox>
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85" alt="Paysage mystérieux" loading="lazy">
+            <div class="photo-label">L'inconnu</div>
+          </div>
+        </div>
+        <p class="note">Photographies d'illustration. Elles ne représentent pas nécessairement les lieux visités par LUX URBEX CREW.</p>
+      </section>
+    </div>
+
+    <aside>
+      <div class="sidebox" id="chronologie">
+        <div class="kicker">Repères chronologiques</div>
+        <h3>Un parcours en plusieurs étapes</h3>
+        <div class="timeline">
+          <div class="timeitem">
+            <strong>2023</strong>
+            <h4>Les débuts du collectif</h4>
+            <p>Le commencement d'une aventure autour de l'exploration et des lieux oubliés.</p>
+          </div>
+          <div class="timeitem">
+            <strong>2024</strong>
+            <h4>Une communauté qui évolue</h4>
+            <p>Le développement progressif du groupe et de ses expériences partagées.</p>
+          </div>
+          <div class="timeitem">
+            <strong>2025</strong>
+            <h4>Une présence plus visible</h4>
+            <p>Le collectif poursuit son développement et partage davantage son univers.</p>
+          </div>
+          <div class="timeitem">
+            <strong>2026</strong>
+            <h4>De nouveaux horizons</h4>
+            <p>Une volonté de continuer à grandir et de faire découvrir la communauté.</p>
+          </div>
+        </div>
+        <p class="note">Chronologie indicative à confirmer avec les événements réels du collectif.</p>
+      </div>
+
+      <div class="sidebox">
+        <div class="kicker">Analyse</div>
+        <h3>La suite reste à écrire</h3>
+        <p>Le développement d'une communauté dépend de ses projets, de ses membres et de sa capacité à partager ses expériences. Pour LUX URBEX CREW, les prochaines étapes restent à découvrir.</p>
+      </div>
+
+      <div class="sidebox" style="background:#e4ded2">
+        <div class="kicker">Informations pratiques</div>
+        <h3>Découvrir le collectif</h3>
+        <p>Le site officiel contient les informations destinées aux personnes qui souhaitent en savoir plus sur la communauté.</p>
+        <a class="btn" href="https://lux-crew-recruiter.lovable.app" target="_blank" rel="noopener">Consulter le site ↗</a>
+      </div>
+
+      <div class="sidebox" style="background:#111;color:white">
+        <div class="kicker">Présence en ligne</div>
+        <h3>@lux_urbex3435</h3>
+        <p>Les publications du collectif sont accessibles sur TikTok.</p>
+        <a class="btn" href="https://www.tiktok.com/@lux_urbex3435" target="_blank" rel="noopener">Voir TikTok ↗</a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="banner">
+    <div>
+      <div class="kicker">Le dernier mot</div>
+      <h2>Les lieux changent. Les histoires restent.</h2>
+      <p>LUX URBEX CREW poursuit son aventure au Luxembourg. Son parcours, ses projets et ses prochaines explorations restent à suivre.</p>
+    </div>
+    <div>
+      <a class="btn" href="https://lux-crew-recruiter.lovable.app" target="_blank" rel="noopener">En savoir plus ↗</a>
+      <a class="btn outline" href="https://www.tiktok.com/@lux_urbex3435" target="_blank" rel="noopener">Suivre le collectif ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <strong>Les Chroniques de l'Urbex</strong>
+    <p>Journal numérique consacré à l'exploration urbaine au Luxembourg.</p>
+  </div>
+  <div class="footerlinks">
+    <a href="#accueil">Accueil</a>
+    <a href="#reportage">Reportage</a>
+    <a href="#galerie">Galerie</a>
+    <a href="https://www.tiktok.com/@lux_urbex3435" target="_blank" rel="noopener">TikTok ↗</a>
+  </div>
+</footer>
+
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+  <button class="close" id="closeLightbox" aria-label="Fermer">&times;</button>
+  <img id="lightboxImage" src="" alt="">
+</div>
+
+<script>
+const lightbox = document.getElementById("lightbox");
+const enlargedImage = document.getElementById("lightboxImage");
+
+document.querySelectorAll("[data-lightbox]").forEach((photo) => {
+  photo.addEventListener("click", () => {
+    const image = photo.querySelector("img");
+    if (!image) return;
+    enlargedImage.src = image.currentSrc || image.src;
+    enlargedImage.alt = image.alt;
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+function closeImage() {
+  lightbox.classList.remove("open");
+  enlargedImage.src = "";
+  document.body.style.overflow = "";
+}
+
+document.getElementById("closeLightbox").addEventListener("click", closeImage);
+
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) closeImage();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeImage();
+});
+</script>
+</body>
+</html>
